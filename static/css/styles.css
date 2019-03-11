@@ -1,0 +1,32 @@
+.admin-panel {
+    position: fixed;
+    right: 50px;
+    bottom: 60px;
+    opacity: 0.5;
+    padding: 5px
+}
+
+.admin-panel:hover {
+    opacity: 1;
+}
+
+a.update, a.delete {
+    display: none;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+  color: black;
+}
+.pagination>li.page-item active>a {
+  color: black;
+}
+
+.footer {
+    position: relative;
+    min-height: 100%;
+    padding: 5px;
+    background: #111a28;
+    color: white;
+    width: 100%
+}
