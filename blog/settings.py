@@ -5,7 +5,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
 
-DEBUG = False
+SECRET_KEY = '3nx&5p5v2egtv0a*cl+do+zllt&i)ymrudjx@*v$psrtsp9vdl'
+
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
