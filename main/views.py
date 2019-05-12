@@ -1,19 +1,20 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import View
-from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 
 from .forms import TagForm, PostForm
-from .models import Post, Tag
 from .utils import *
 from django.db.models import Q
+
+
+def links(request):
+    return render(request, 'main/links.html')
+
 
 def posts_list(request):
     search_query = request.GET.get('search', '')
 
     if search_query:
-        posts = Post.objects.filter(Q(title__icontains=search_query), Q(body__icontains=search_query))
+        posts = Post.objects.filter(Q(title__icontains=search_query) | Q(body__icontains=search_query))
     else:
         posts = Post.objects.all()
 
@@ -33,10 +34,10 @@ def posts_list(request):
         next_url = '?page={}'.format(page.next_page_number())
     else:
         next_url = ''
-
     context = {
         'page_object': page,
         'is_paginated': is_paginated,
+
         'next_page_url': next_url,
         'previous_page_url': prev_url,
     }
@@ -54,16 +55,19 @@ class PostCreate(LoginRequiredMixin, ObjectCreateMixin, View):
     template = 'main/post_create_form.html'
     raise_exception = True
 
+
 class PostUpdate(LoginRequiredMixin, ObjectUpdateMixin, View):
     model = Post
     model_form = PostForm
     template = 'main/post_update_form.html'
     raise_exception = True
 
+
 class TagCreate(LoginRequiredMixin, ObjectCreateMixin, View):
     model_form = TagForm
     template = 'main/tag_create.html'
     raise_exception = True
+
 
 class TagUpdate(LoginRequiredMixin, ObjectUpdateMixin, View):
     model = Tag
@@ -87,6 +91,7 @@ class TagDelete(LoginRequiredMixin, ObjectDeleteMixin, View):
     template = 'main/tag_delete_form.html'
     redirect_url = 'tags_list_url'
     raise_exception = True
+
 
 class PostDelete(LoginRequiredMixin, ObjectDeleteMixin, View):
     model = Post

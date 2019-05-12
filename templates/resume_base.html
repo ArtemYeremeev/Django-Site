@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>
+        {% block title %}
+            Django Resume
+        {% endblock %}
+    </title>
+<body class="body">
+
+    <div class="container text-dark">
+        <div class="row justify-content-left m-3 align-items-center">
+            <div style="background-color: white; width: 100%; margin-top: 25px;" class="jumbotron">
+                <h2 class="display-4">Резюме</h2>
+                <p class="lead">Здесь вы можете ознакомиться с моим резюме.</p>
+                <hr class="my-3">
+                <p>Также вы можете найти это резюме на hh.ru.</p>
+                <a class="btn btn-dark btn-lg" href="https://krasnodar.hh.ru/applicant/resumes/view?resume=6f41d676ff06bdf5540039ed1f395a42434554" role="button">Перейти на hh.ru</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-dark" style="background-color: white; width: 1075px;">
+        <div class="row justify-content-left m-3 align-items-left">
+            <div style="background-color: white" class="jumbotron col-sm-6">
+                <div class="row justify-content-left align-self-left">
+                    <h1 class="display-4"> Еремеев Артем <br> 22 года </h1>
+                </div>
+            </div>
+            <div style="background-color: white" class="jumbotron col-sm-6">
+                <div class="row justify-content-center align-self-center">
+                    <img src="/static/img/photo.jpg" height="240px" width="180px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-dark">
+        <div class="row justify-content-left m-3 align-items-center">
+            <div style="background-color: white; width: 100%; margin-top: 30px;" class="jumbotron">
+                <h2 class="display-4">Образование</h2>
+                <p class="lead">Высшее - Кубанский Государственный Университет (КубГУ).</p>
+                <p class="lead">Бакалавр по направлению 27.03.05 (Инноватика) - 2015-2019 гг.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-dark">
+        <div class="row justify-content-left m-3 align-items-center">
+            <div style="background-color: white; width: 100%;" class="jumbotron">
+                <h2 class="display-4">Кратко обо мне</h2>
+                <hr class="my-4">
+                <p>Меня зовут Артем, мне 22 года. Я студент 4 курса КубГУ, направление Инноватика.<br>
+                 Общий опыт работы на Python3 - около 1 года. Он включает как работу на данном языке в рамках университетского
+                курса (Информатика, Системный анализ, Системы искуственного интеллекта, Интеллектуальные технологии и представление знаний),
+                так и самостоятельное изучение профессиональной литературы и курсов. Примеры работ представлены в моем GitHub.
+                    Также получил опыт работы с веб-фреймворком Django
+                    и сопутствующими ему технологиями - SQLite, Html, CSS, Bootstrap.
+                    Помимо этого имею опыт работы с PostgreSQL, Git, Lua, Visual Prolog. Работал со сторонними API (в частности API Telegram).
+                </p>
+                <p>Ключевые личные качества - ответственность, пунктуальность, высокая обучаемость и нацеленность на профессиональное развитие.</p>
+                <hr class="my-4">
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-dark">
+        <div class="row justify-content-left m-3 align-items-center">
+            <div style="background-color: white; width: 100%;" class="jumbotron">
+                <h1 class="display-4" style="margin-bottom: 30px;">Мои навыки</h1>
+                <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">Язык программирования</th>
+                <td>Python3, Lua, Visual Prolog</td>
+            </tr>
+            <tr>
+                <th scope="row">Фреймворк</th>
+                <td>Django</td>
+            </tr>
+            <tr>
+                <th scope="row">Фронтенд</th>
+                <td>Html, CSS, Bootstrap</td>
+            </tr>
+            <tr>
+                <th scope="row">IDE</th>
+                <td>PyCharm, Atom</td>
+            </tr>
+            <tr>
+                <th scope="row">ОС</th>
+                <td>Windows 7, 10</td>
+            </tr>
+            <tr>
+                <th scope="row">Другое</th>
+                <td>Git, Github, PostgreSQL, MySQL.</td>
+            </tr>
+        </tbody>
+    </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-dark">
+        <div class="row justify-content-left m-3 align-items-center">
+            <div style="background-color: white; width: 100%;" class="jumbotron">
+                <h1 class="display-4" style="margin-bottom: 30px;">Дополнительные навыки</h1>
+                <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">Иностранный язык</th>
+                <td>Английский (A2) </td>
+            </tr>
+            <tr>
+                <th scope="row">Водительские права</th>
+                <td>Категория B</td>
+            </tr>
+        </tbody>
+    </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-body" style="background-color: white; width: 100%;">
+            <h5 class="card-title">Вы также можете посетить</h5>
+            <a href="https://github.com/ArtemYeremeev" class="btn btn-dark">Мой GitHub</a>
+            <a href="#" class="btn btn-dark">Мой Django Blog</a>
+        </div>
+    </div>
+
+</body>
+
+{% block footer %}
+    <footer>
+        <div class="footer">
+            <h5>Created by Artem Yeremeev, 2019</h5>
+        </div>
+    </footer>
+{% endblock %}
+
+</html>
+
